@@ -6,8 +6,8 @@ output = {}
 webpage = urlopen(sys.argv[1])
 soup = BeautifulSoup(webpage, "lxml")
 
-temp = soup.find("meta", property="og:url")
-output["og:url"] = temp["content"] if temp else ""
+# temp = soup.find("meta", property="og:url")
+# output["og:url"] = temp["content"] if temp else ""
 
 temp = soup.find("meta", property="og:type")
 output["og:type"] = temp["content"] if temp else ""
