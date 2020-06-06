@@ -36,7 +36,7 @@ with open('./index-template.html', 'r', encoding="utf-8") as f:
 	template = f.read()
 	output_html = template.replace('{meta data}', output_meta)
 	
-with open('./index.html', 'w', encoding="utf-8") as f:
+with open('./docs/index.html', 'w', encoding="utf-8") as f:
 	f.write(output_html)
 	
 print('mission complete')
