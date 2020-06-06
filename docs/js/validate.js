@@ -1,0 +1,1 @@
+const validate_domain = ['blog.zmcx16.moe']
