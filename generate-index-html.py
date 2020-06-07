@@ -3,7 +3,10 @@ from urllib.request import urlopen
 from bs4 import BeautifulSoup
 
 output = {}
-webpage = urlopen(sys.argv[1])
+source_url = sys.argv[1]
+output_filename = sys.argv[2]
+
+webpage = urlopen(source_url)
 soup = BeautifulSoup(webpage, "lxml")
 
 # temp = soup.find("meta", property="og:url")
@@ -34,9 +37,11 @@ for key, value in output.items():
 output_html = ''
 with open('./index-template.html', 'r', encoding="utf-8") as f:
 	template = f.read()
+	template = template.replace('{url}', source_url)
 	output_html = template.replace('{meta data}', output_meta)
 	
-with open('./docs/index.html', 'w', encoding="utf-8") as f:
+	
+with open('./docs/redirect/' + output_filename, 'w', encoding="utf-8") as f:
 	f.write(output_html)
 	
 print('mission complete')

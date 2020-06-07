@@ -2,30 +2,10 @@
 <html>
   <head>
     {meta data}
-    <script src="./js/jquery.min.js"></script>
-    <script src="./js/validate.js"></script>
     <script>
-
-      var searchParams = new URLSearchParams(window.location.search)
-      var isValid = false;
-      var url = searchParams.get('url')
-      if (url) {
-        isValid = validate_domain.some((domain) => {
-          console.log(url)
-          var m = url.match(/^http.?:\/\/[^/]+/);
-          console.log(m)
-          var tgt_domain = m ? m[0] : null;
-          if (tgt_domain){
-            return tgt_domain.includes(domain)
-          }
-          return false;
-        });
-      }
-      if(isValid){
-        window.location.replace(url);
-        window.location.href = url;
-      }
-
+      var url = '{url}';
+      window.location.replace(url);
+      window.location.href = url;
     </script>
   </head>
   <body>
