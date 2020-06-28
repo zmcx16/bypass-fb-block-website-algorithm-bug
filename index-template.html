@@ -3,9 +3,11 @@
   <head>
     {meta data}
     <script>
-      var url = '{url}';
-      window.location.replace(url);
-      window.location.href = url;
+		window.setTimeout(( () => {
+			var url = '{url}';
+			window.location.replace(url);
+			window.location.href = url;	
+		}), {delay time});
     </script>
   </head>
   <body>

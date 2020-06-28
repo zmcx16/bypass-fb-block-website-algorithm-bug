@@ -19,7 +19,7 @@ Hope Facebook can fix the block URL algorithm bug one day!
 2. Static redirect target website
     1. Git clone this repository and set your repository to enable the Github page.
     2. Run "generate-index-html.py" python script, the usage:
-       python generate-index-html.py {target url} {target output file name}
+       python generate-index-html.py {target url} {delay time} {target output file name}
     3. The output file is generated on /docs/redirect/{target output file name}
     4. You can use below url format to bypass Facebook url block check and it will show preview title / description / image:
        "https://{your github page url}/redirect/{target output file name}"

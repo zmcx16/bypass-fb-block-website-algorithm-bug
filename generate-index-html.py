@@ -4,7 +4,8 @@ from bs4 import BeautifulSoup
 
 output = {}
 source_url = sys.argv[1]
-output_filename = sys.argv[2]
+delay_time = sys.argv[2]
+output_filename = sys.argv[3]
 
 webpage = urlopen(source_url)
 soup = BeautifulSoup(webpage, "lxml")
@@ -38,7 +39,8 @@ output_html = ''
 with open('./index-template.html', 'r', encoding="utf-8") as f:
 	template = f.read()
 	template = template.replace('{url}', source_url)
-	output_html = template.replace('{meta data}', output_meta)
+	template = template.replace('{meta data}', output_meta)
+	output_html = template.replace('{delay time}', delay_time)
 	
 	
 with open('./docs/redirect/' + output_filename, 'w', encoding="utf-8") as f:
