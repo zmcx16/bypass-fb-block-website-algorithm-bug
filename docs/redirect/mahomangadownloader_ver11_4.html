@@ -6,13 +6,54 @@
 <meta property="og:description" content="今天有使用者反應mfkhm網站只提供手機觀看, 不給電腦版瀏覽器觀看, 所以下載器就不能下載了。 印象中很久之前也有人提過這問題, 不過當時覺得有點扯, 怎麼會有網站只提供手機不給電腦瀏覽器使用, 想說網站遲早會開放就先放置這問題了。 不過今天接到回報後想一想, 都過這麼久了還是...">
 
     <script>
-		window.setTimeout(( () => {
-			var url = 'https://blog.zmcx16.moe/2020/06/mahomangadownloaderver114.html';
-			window.location.replace(url);
-			window.location.href = url;	
-		}), 5000);
+	  window.setTimeout(( () => {
+		var url = 'https://blog.zmcx16.moe/2020/06/mahomangadownloaderver114.html';
+		window.location.replace(url);
+		window.location.href = url;	
+	  }), 5000);
     </script>
   </head>
+  <style>
+	.loadingBlock{
+	  width: 100%;
+	  height: 100%;
+	  position: fixed;
+	  top: 0;
+	  z-index: 9999;
+	}
+
+	.loadingBackground{
+	  background: black;
+	  opacity: .3;
+	  width: inherit;
+	  height: inherit;
+	}
+
+	.loadingAnimation{ /* diable windows and show loading animate */
+	  position: fixed;
+	  border: 24px solid #f3f3f3;
+	  border-top: 24px solid lightskyblue;
+	  border-radius: 50%;
+	  width: 120px;
+	  height: 120px;
+	  animation: spin 2s linear infinite;
+	  top: calc(50% - 80px);
+	  left: calc(50% - 80px);
+	  z-index: 120;
+	  opacity: 0.9;
+	}
+
+	@keyframes spin {
+	  0% { transform: rotate(0deg); }
+	  100% { transform: rotate(360deg); }
+	}
+  </style>
   <body>
+    <div class"loadingBlock">
+      <div class="loadingAnimation">
+      </div>
+      <div class="loadingBackground">
+      </div>
+    </div>
   </body>
 </html>
